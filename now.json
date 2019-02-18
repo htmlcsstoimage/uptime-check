@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "name": "nodejs",
+  "alias": "uptime-check.hcti.io",
+  "builds": [
+    { "src": "*.js", "use": "@now/node" }
+  ]
+}
