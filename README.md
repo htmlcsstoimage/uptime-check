@@ -1,4 +1,4 @@
-# uptime-check
+# uptime-check ✅
 Our Pingdom monitor for generating + downloading an image with [HTML/CSS to Image](https://hcti.io).
 
 We have this run every minute and alert us if a check fails.
