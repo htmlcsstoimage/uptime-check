@@ -2,13 +2,13 @@ require("request");
 const request = require("request-promise");
 const { parse } = require("url");
 
-const data = {
-  html: "<div class='box'>JavaScript ✅</div>",
-  css: ".box { border: 4px solid #03B875; padding: 20px; font-family: 'Roboto'; }",
-  google_fonts: "Roboto"
-};
-
 async function createAndDownloadImage() {
+  const data = {
+    html: `<div class='box'>${Date.now()}</div>`,
+    css: ".box { border: 4px solid #03B875; padding: 20px; font-family: 'Roboto'; }",
+    google_fonts: "Roboto"
+  };
+
   try {
     const createImage = await request
       .post({
