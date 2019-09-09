@@ -27,7 +27,8 @@ func GenerateImage(html string, css string) (url string, elaspedMS int64, err er
 		"html": html,
 		"css":  css,
 	}
-	reqBody, err := json.Marshal(data)
+	b := new(bytes.Buffer)
+	json.NewEncoder(b).Encode(data)
 
 	if err != nil {
 		return "", 0, err
