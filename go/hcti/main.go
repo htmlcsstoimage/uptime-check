@@ -34,7 +34,7 @@ func GenerateImage(html string, css string) (url string, elaspedMS int64, err er
 		return "", 0, err
 	}
 
-	req, err := http.NewRequest("POST", "https://hcti.io/v1/image", bytes.NewReader(reqBody))
+	req, err := http.NewRequest("POST", "https://hcti.io/v1/image", b)
 
 	if err != nil {
 		return "", 0, err
