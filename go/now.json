@@ -1,7 +1,0 @@
-{
-  "version": 2,
-  "name": "go",
-  "builds": [
-    { "src": "index.go", "use": "@now/go" }
-  ]
-}

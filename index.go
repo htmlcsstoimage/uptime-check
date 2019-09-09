@@ -48,7 +48,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusInternalServerError)
 		w.Write(x)
 	} else {
-		response := pingdom_http_custom_check{"UP", totalTime}
+		response := pingdom_http_custom_check{"OK", totalTime}
 		x, _ := xml.MarshalIndent(response, "", "  ")
 
 		w.WriteHeader(http.StatusOK)

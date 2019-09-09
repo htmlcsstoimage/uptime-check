@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "name": "nodejs",
-  "alias": "uptime-check.hcti.io",
+  "name": "go",
+  "alias": ["uptime-check.hcti.io"],
   "builds": [
-    { "src": "*.js", "use": "@now/node" }
-  ]
+    { "src": "index.go", "use": "@now/go" }
+  ],
+  "env": {
+    "API_KEY": "@api_key",
+    "API_ID": "@api_id",
+    "UPTIME_PASSWORD": "@uptime_password"
+  }
 }
