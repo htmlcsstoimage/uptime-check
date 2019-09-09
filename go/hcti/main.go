@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"encoding/json"
 	"errors"
-	"io/ioutil"
 	"net/http"
 	"os"
 	"time"
@@ -52,23 +51,18 @@ func GenerateImage(html string, css string) (url string, elaspedMS int64, err er
 	}
 
 	defer resp.Body.Close()
-	body, err := ioutil.ReadAll(resp.Body)
-
-	if err != nil {
-		return "", 0, err
-	}
 
 	if resp.StatusCode == 200 {
 		elapsedMS := int64(time.Since(start) / time.Millisecond)
 
 		var image Image
-err := json.NewDecoder(resp.Body).Decode(&image)
+		err := json.NewDecoder(resp.Body).Decode(&image)
 		url = image.Url
 
 		return url, elapsedMS, err
 	} else {
 		var imageError ImageError
-    err := json.NewDecoder(resp.Body).Decode(&imageError)
+		json.NewDecoder(resp.Body).Decode(&imageError)
 
 		return "", 0, errors.New(imageError.Message)
 	}
