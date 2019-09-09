@@ -62,7 +62,7 @@ func GenerateImage(html string, css string) (url string, elaspedMS int64, err er
 		elapsedMS := int64(time.Since(start) / time.Millisecond)
 
 		var image Image
-		json.Unmarshal([]byte(body), &image)
+err := json.NewDecoder(resp.Body).Decode(&image)
 		url = image.Url
 
 		return url, elapsedMS, err
