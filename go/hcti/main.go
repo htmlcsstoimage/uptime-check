@@ -68,7 +68,7 @@ err := json.NewDecoder(resp.Body).Decode(&image)
 		return url, elapsedMS, err
 	} else {
 		var imageError ImageError
-		json.Unmarshal([]byte(body), &imageError)
+    err := json.NewDecoder(resp.Body).Decode(&imageError)
 
 		return "", 0, errors.New(imageError.Message)
 	}
