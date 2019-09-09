@@ -9,7 +9,7 @@ Returns results in XML for Pingdom.
 ```xml
 <pingdom_http_custom_check>
   <status>OK</status>
-  <response_time>3131</response_time>
+  <response_time>320</response_time>
 </pingdom_http_custom_check>
 ```
 
